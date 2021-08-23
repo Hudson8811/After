@@ -1,0 +1,22 @@
+.btn {
+  display: inline-block;
+  vertical-align: top;
+  min-width: 286px;
+  padding: 30px 29px 24px;
+  font-size: 20px;
+  line-height: 1;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #536587;
+  text-align: center;
+  border-radius: 37px;
+  text-decoration: none;
+  appearance: none;
+
+  background-color: $beige;
+  transition: background-color 0.3s ease;
+
+  @include hover {
+    background-color: lighten($beige, 5%);
+  }
+}

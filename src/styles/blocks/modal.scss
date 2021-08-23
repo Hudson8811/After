@@ -1,0 +1,34 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(#000, 0.5);
+  cursor: pointer;
+
+  &__inner {
+    position: relative;
+    width: 85%;
+    max-width: 400px;
+    align-self: center;
+    padding: 40px;
+    background-color: #ffffff;
+    cursor: default;
+  }
+
+  &__close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 0;
+    line-height: 1;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    appearance: none;
+  }
+}

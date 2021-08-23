@@ -1,0 +1,26 @@
+/* base */
+@import "base/var";
+@import "base/reset";
+@import "base/fonts";
+
+/* mixin */
+@import "base/mixin";
+
+/*libs*/
+@import "vendor/fullpage.min";
+
+/* main */
+@import "partials/main";
+
+/* components */
+@import "partials/header";
+@import "partials/footer";
+
+/*blocks*/
+@import "blocks/modal";
+@import "blocks/btn";
+@import "blocks/social";
+@import "blocks/after-logo";
+@import "blocks/wheel";
+@import "blocks/result-section";
+@import "blocks/section";

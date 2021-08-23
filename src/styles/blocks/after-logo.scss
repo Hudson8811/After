@@ -1,0 +1,29 @@
+.after-logo {
+  position: relative;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  &__text {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #e6e5b4;
+    white-space: nowrap;
+
+    &--top {
+      top: 23px;
+    }
+    &--bottom {
+      bottom: 51px;
+    }
+  }
+}

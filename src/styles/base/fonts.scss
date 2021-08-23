@@ -1,0 +1,38 @@
+@font-face {
+  font-family: "18VAG";
+  src: url("../fonts/18VAGRoundedMNormal.woff2") format("woff2"),
+    url("../fonts/18VAGRoundedMNormal.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Tondo";
+  src: local("Tondo Light Regular"), local("TondoLight-Regular"),
+    url("../fonts/TondoLight-Regular.woff2") format("woff2"),
+    url("../fonts/TondoLight-Regular.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Tondo";
+  src: local("Tondo Regular"), local("Tondo-Regular"),
+    url("../fonts/Tondo-Regular.woff2") format("woff2"),
+    url("../fonts/Tondo-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Tondo";
+  src: local("Tondo Bold"), local("TondoLight-Bold"),
+    url("../fonts/Tondo-Bold.woff2") format("woff2"),
+    url("../fonts/Tondo-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}

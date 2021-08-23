@@ -1,0 +1,25 @@
+/* media */
+$media-list: (
+  "xxs": 375,
+  "xs": 560,
+  "sm": 767,
+  "md": 1079,
+  "lg": 1279,
+  "xl": 1599,
+  "xxl": 1900,
+);
+
+/* шрифты */
+$mainFont: "Tondo", "Arial", sans-serif;
+$fs-main: 20px;
+$lh-main: (30 / 20);
+
+/* цвета */
+$textMainColor: #222222;
+$beige: #e6e5b4;
+
+// Retina
+//---------------------------------
+
+$retina-dpi: 144dpi;
+$retina-dppx: 1.5dppx;

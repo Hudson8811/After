@@ -1,0 +1,28 @@
+.social {
+  display: flex;
+  flex-wrap: wrap;
+  pointer-events: auto;
+
+  a {
+    display: flex;
+    width: 52px;
+    height: 52px;
+    justify-content: center;
+    margin-top: 8px;
+    border-radius: 50%;
+    background-color: $beige;
+    transition: background-color 0.3s ease;
+
+    @include hover {
+      background-color: lighten($beige, 5%);
+    }
+
+    svg {
+      align-self: center;
+    }
+  }
+
+  a + a {
+    margin-left: 12px;
+  }
+}

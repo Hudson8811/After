@@ -1,0 +1,56 @@
+.wheel {
+  position: relative;
+  text-align: center;
+
+  &__image {
+    margin-bottom: 103px;
+  }
+
+  &__btn {
+  }
+
+  &__aspect {
+    position: absolute;
+    font-size: 18px;
+    line-height: 1;
+    color: #ffffff;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+
+    &--acceptance {
+      top: 6.5%;
+      left: 1%;
+    }
+
+    &--independence {
+      top: 6.5%;
+      left: 84.5%;
+    }
+
+    &--passion {
+      top: 43.7%;
+      left: 102.5%;
+    }
+
+    &--softness {
+      top: 91.4%;
+      left: 85%;
+    }
+
+    &--complementarity {
+      top: 105%;
+      left: 30%;
+    }
+
+    &--safety {
+      top: 91.4%;
+      left: -22%;
+    }
+
+    &--jealousy {
+      top: 43.7%;
+      left: -18%;
+    }
+  }
+}

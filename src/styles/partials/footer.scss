@@ -1,0 +1,13 @@
+.footer {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  bottom: 49px;
+  pointer-events: none;
+
+  &__container {
+    display: flex;
+    justify-content: flex-end;
+  }
+}

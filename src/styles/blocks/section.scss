@@ -1,0 +1,152 @@
+.section {
+  $self: &;
+
+  position: relative;
+  background-color: #96d4d8;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &--first {
+    background-image: url("../images/bg-1.jpg");
+
+    @include retina {
+      background-image: url("../images/bg-1@2x.jpg");
+    }
+
+    #{$self}__title {
+      max-width: 990px;
+      margin: 0 auto 20px;
+
+      font-family: "18VAG";
+      font-weight: 700;
+      font-size: 63px;
+      line-height: (65 / 63);
+      color: #ffffff;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    #{$self}__text {
+      max-width: 1123px;
+      margin: 0 auto 48px;
+      text-align: center;
+      color: #ffffff;
+    }
+
+    #{$self}__btn {
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &--second {
+    position: relative;
+    background-image: url("../images/bg-2.jpg");
+
+    @include retina {
+      background-image: url("../images/bg-2@2x.jpg");
+    }
+
+    #{$self}__container {
+      display: grid;
+      grid-template-columns: 736px 1fr;
+    }
+
+    #{$self}__rating {
+      svg {
+        fill: #96d4d8;
+      }
+    }
+
+    #{$self}__info {
+      grid-column: 1;
+      margin-top: 156px;
+    }
+
+    #{$self}__text {
+      grid-column: 1;
+      grid-row: 2;
+      margin-top: 67px;
+      margin-left: 150px;
+    }
+
+    #{$self}__wheel {
+      position: relative;
+      left: 81px;
+      grid-column: 2;
+      grid-row: 1 / span 2;
+      width: 656px;
+      height: 656px;
+      margin: 59px auto;
+    }
+  }
+
+  &--third {
+    background-image: url("../images/bg-2.jpg");
+
+    @include retina {
+      background-image: url("../images/bg-2@2x.jpg");
+    }
+
+    #{$self}__container {
+      display: flex;
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__after-logo {
+    width: 394px;
+    margin: 0 auto;
+  }
+
+  &__header {
+    position: absolute;
+    left: 50px;
+    top: 40px;
+    bottom: 70px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__rating {
+    svg {
+      fill: $beige;
+    }
+  }
+
+  &__logo {
+  }
+
+  &__title {
+    margin-bottom: 37px;
+    font-size: 48px;
+    line-height: 1;
+    font-weight: 700;
+    color: $beige;
+    text-transform: uppercase;
+  }
+
+  &__info {
+    list-style-position: inside;
+    max-width: 573px;
+    margin-left: 150px !important;
+    font-size: 30px;
+    line-height: 1.333333333333;
+    color: #ffffff;
+    letter-spacing: 0.03em;
+
+    li + li {
+      margin-top: 12px;
+    }
+  }
+
+  &__text {
+    & + & {
+      margin-top: 40px;
+    }
+  }
+}
