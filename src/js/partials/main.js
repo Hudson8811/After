@@ -62,6 +62,12 @@ window.addEventListener('load', () => {
       if (resultSection.classList.contains('invisible')) {
         resultSection.classList.remove('invisible');
         fillWithContent();
+
+        if (mediaList.matches) {
+          document.querySelector('.section--second .section__container').classList.add('hide');
+          fullpage_api.reBuild();
+        }
+
       } else {
         resultSectionContent.ontransitionend = () => {
           fillWithContent();
@@ -105,6 +111,11 @@ window.addEventListener('load', () => {
 
     resultSection.classList.add('invisible');
     changeAllowScrolling(true, 'up');
+
+    if (mediaList.matches) {
+      document.querySelector('.section--second .section__container').classList.remove('hide');
+      fullpage_api.reBuild();
+    }
   }
 
 

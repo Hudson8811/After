@@ -9,7 +9,7 @@
 
   @include max(sm) {
     padding-top: vw(62, 414);
-    padding-bottom: vw(62, 414);
+    padding-bottom: vw(100, 414);
   }
 
   &--first {
@@ -81,6 +81,8 @@
     }
 
     @include max(sm) {
+      padding-top: vw(86, 414);
+      padding-bottom: vw(100, 414);
       background-image: url("../images/mobile-bg-2.jpg");
 
       @include retina {
@@ -152,6 +154,13 @@
 
     @include max(sm) {
       min-height: 0;
+      transition: opacity 0.3s ease;
+
+      &.hide {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+      }
     }
   }
 

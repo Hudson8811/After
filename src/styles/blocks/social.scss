@@ -18,13 +18,17 @@
     }
 
     @include max(sm) {
-      width: vw(52, 414);
-      height: vw(52, 414);
+      width: vw(36, 414);
+      height: vw(36, 414);
       margin-top: vw(8, 414);
     }
 
     svg {
       align-self: center;
+
+      @include max(sm) {
+        transform: scale(0.7);
+      }
     }
 
     &--vk {

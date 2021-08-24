@@ -1,15 +1,16 @@
 .footer {
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   left: 0;
   right: 0;
   bottom: vw(49);
   pointer-events: none;
 
   @include max(sm) {
-    position: static;
-    padding-top: vw(78, 414);
-    padding-bottom: vw(20, 414);
+    //position: static;
+    bottom: 0;
+    padding-top: vw(8, 414);
+    padding-bottom: vw(8, 414);
   }
 
   &__container {
@@ -28,10 +29,10 @@
     @include max(sm) {
       display: block;
       width: 100%;
-      margin-top: vw(13, 414);
+      margin-top: vw(8, 414);
 
       font-size: vw(12, 414);
-      line-height: (30 / 12);
+      line-height: (18 / 12);
       color: #ffffff;
       text-transform: uppercase;
       font-weight: 700;

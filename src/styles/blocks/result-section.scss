@@ -15,16 +15,19 @@
   }
 
   @include max(sm) {
+    position: static;
+    //background-color: lightblue;
     //padding: vw(86, 414) 0 vw(60, 414);
-    background-size: cover;
-    background-image: url("../images/mobile-bg-2.jpg");
+    //background-size: cover;
+    background-image: none; //url("../images/mobile-bg-2.jpg");
 
     @include retina {
-      background-image: url("../images/mobile-bg-2@2x.jpg");
+      background-image: none; //url("../images/mobile-bg-2@2x.jpg");
     }
   }
 
   &.invisible {
+    position: absolute;
     opacity: 0;
     pointer-events: none;
   }
@@ -52,7 +55,7 @@
     transition: opacity 0.3s ease;
 
     @include max(sm) {
-      display: block;
+      //display: block;
       max-width: vw(349, 414);
       margin-left: auto;
       margin-right: auto;
@@ -78,6 +81,10 @@
 
     #{$self}__btn {
       margin-top: vw(20);
+
+      @include max(sm) {
+        margin-top: vw(20, 414);
+      }
     }
   }
 
@@ -106,6 +113,7 @@
       font-size: 18px;
       line-height: (25 / 18);
     }
+
     & + & {
       margin-top: vw(40);
 
