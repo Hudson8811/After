@@ -82,15 +82,18 @@
       max-height: 57vh;
       min-height: vw(300);
       margin-bottom: auto;
+      padding-right: vw(20);
       //overflow: hidden;
 
       @include max(sm) {
         max-height: none;
         min-height: 0;
+        padding-right: 0;
       }
 
       @include min(xxl) {
         min-height: 300px;
+        padding-right: 20px;
       }
     }
 
