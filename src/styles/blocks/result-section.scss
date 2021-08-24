@@ -129,6 +129,10 @@
       font-size: vw(35, 414);
     }
 
+    @include max(xs) {
+      font-size: vw(26, 414);
+    }
+
     @include min(xxl) {
       margin-bottom: 37px;
       font-size: 48px;

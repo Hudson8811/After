@@ -14,6 +14,9 @@ window.addEventListener('load', () => {
     overflowScroll = html.clientWidth <= 767;
     clearTimeout(resizeId);
     resizeId = setTimeout(reInitFullpage, 500);
+
+    
+    fullpage_api.reBuild();
   });
 
   function reInitFullpage(){
@@ -31,9 +34,6 @@ window.addEventListener('load', () => {
 
   fullpageInit();
 
-  window.addEventListener('resize', () => {
-    fullpage_api.reBuild();
-  })
 
   document.querySelectorAll('.wheel path').forEach(it => {
     it.onclick = function () {
@@ -73,15 +73,26 @@ window.addEventListener('load', () => {
       if (isAllSelected) {
         showResult();
       } else {
-        new Modal();
+        modal.open();
         
-        document.addEventListener('modal-close', () => {
-          changeAllowScrolling(true, 'all');
-        });
+        
         changeAllowScrolling(false, 'all');
       }
     });
 
+  });
+
+  document.addEventListener('mousedown', e => {
+    const target = e.target;
+
+    if (target.closest('.modal__close') || target.closest('.modal') && !target.closest('.modal__inner') && document.body.classList.contains('modal-open')) {
+      modal.close();
+    }
+  });
+
+  document.addEventListener('modal-close', () => {
+    changeAllowScrolling(true, 'all');
+    
   });
 
   function checkAllSelected() {
@@ -231,13 +242,9 @@ window.addEventListener('load', () => {
     constructor() {
       this.el = document.createElement('div');
       this.el.classList.add('modal');
-      this.el.addEventListener('click', this.onModalClick.bind(this));
       this.render();
-      document.body.append(this.el);
-      document.body.classList.add('modal-open');
       document.addEventListener('keydown', this.onKeydown);
-
-
+      //this.el.addEventListener('click', this.onModalClick.bind(this));
     }
     
     render() {
@@ -257,9 +264,13 @@ window.addEventListener('load', () => {
         </div>`;
     }
 
+    open() {
+      document.body.append(this.el);
+      document.body.classList.add('modal-open');
+    }
+
     close() {
       this.el.remove();
-      
       document.body.classList.remove('modal-open');
 
       const event = new CustomEvent('modal-close', {
@@ -269,13 +280,13 @@ window.addEventListener('load', () => {
       document.dispatchEvent(event);
     }
 
-    onModalClick(e) {
+    /*onModalClick(e) {
       const target = e.target;
 
       if (target.closest('.modal__close') || target.closest('.modal') && !target.closest('.modal__inner') && document.body.classList.contains('modal-open')) {
         this.close();
       }
-    }
+    }*/
 
     onKeydown(e) {
       if (e.key === 'Escape') {
@@ -284,4 +295,6 @@ window.addEventListener('load', () => {
       }
     }
   }
+
+  let modal = new Modal();
 });
