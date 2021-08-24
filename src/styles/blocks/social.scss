@@ -3,12 +3,12 @@
   flex-wrap: wrap;
   pointer-events: auto;
 
-  a {
+  &__item {
     display: flex;
-    width: 52px;
-    height: 52px;
+    width: vw(52);
+    height: vw(52);
     justify-content: center;
-    margin-top: 8px;
+    margin-top: vw(8);
     border-radius: 50%;
     background-color: $beige;
     transition: background-color 0.3s ease;
@@ -17,12 +17,67 @@
       background-color: lighten($beige, 5%);
     }
 
+    @include max(sm) {
+      width: vw(52, 414);
+      height: vw(52, 414);
+      margin-top: vw(8, 414);
+    }
+
     svg {
       align-self: center;
+    }
+
+    &--vk {
+      svg {
+        width: vw(14);
+        height: vw(15);
+
+        @include max(sm) {
+          width: vw(14, 414);
+          height: vw(15, 414);
+        }
+      }
+    }
+    &--fb {
+      svg {
+        width: vw(11);
+        height: vw(20);
+
+        @include max(sm) {
+          width: vw(11, 414);
+          height: vw(20, 414);
+        }
+      }
+    }
+    &--ok {
+      svg {
+        width: vw(12);
+        height: vw(20);
+
+        @include max(sm) {
+          width: vw(12, 414);
+          height: vw(20, 414);
+        }
+      }
+    }
+    &--tw {
+      svg {
+        width: vw(19);
+        height: vw(16);
+
+        @include max(sm) {
+          width: vw(19, 414);
+          height: vw(16, 414);
+        }
+      }
     }
   }
 
   a + a {
-    margin-left: 12px;
+    margin-left: vw(12);
+
+    @include max(sm) {
+      margin-left: vw(12, 414);
+    }
   }
 }

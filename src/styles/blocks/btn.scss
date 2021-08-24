@@ -1,20 +1,27 @@
 .btn {
   display: inline-block;
   vertical-align: top;
-  min-width: 286px;
-  padding: 30px 29px 24px;
-  font-size: 20px;
+  min-width: vw(286);
+  padding: vw(30) vw(29) vw(24);
+  font-size: vw(20);
   line-height: 1;
   font-weight: 700;
   text-transform: uppercase;
   color: #536587;
   text-align: center;
-  border-radius: 37px;
+  border-radius: vw(37);
   text-decoration: none;
   appearance: none;
 
   background-color: $beige;
   transition: background-color 0.3s ease;
+
+  @include max(sm) {
+    min-width: vw(286, 414);
+    padding: vw(30, 414) vw(29, 414) vw(24, 414);
+    font-size: vw(20, 414);
+    border-radius: vw(37, 414);
+  }
 
   @include hover {
     background-color: lighten($beige, 5%);
