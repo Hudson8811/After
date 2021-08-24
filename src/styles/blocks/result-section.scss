@@ -82,7 +82,7 @@
       max-height: 57vh;
       min-height: vw(300);
       margin-bottom: auto;
-      overflow: auto;
+      //overflow: hidden;
 
       @include max(sm) {
         max-height: none;
