@@ -157,7 +157,7 @@ window.addEventListener('load', () => {
     fp = new fullpage('#fullpage', {
       licenseKey: '930B3D8E-64114A48-BE58EB40-E2698A87',
       verticalCentered: false,
-      scrollOverflow: true
+      scrollOverflow: true,
     });
   }
 

@@ -15,9 +15,7 @@
   }
 
   @include max(sm) {
-    position: static;
-    height: auto;
-    padding: vw(86, 414) 0 vw(60, 414);
+    //padding: vw(86, 414) 0 vw(60, 414);
     background-size: cover;
     background-image: url("../images/mobile-bg-2.jpg");
 
