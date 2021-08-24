@@ -12,14 +12,25 @@ window.addEventListener('load', () => {
   const resultSection = document.querySelector('.__js_result-section');
   const resultSectionContent = resultSection.querySelector('.result-section__content');
 
-  
-  fullpageInit();
-  
-  
 
-  document.addEventListener('modal-close', () => {
-    changeAllowScrolling(true, 'all');
-  });
+  fullpageInit();
+
+  document.querySelectorAll('.wheel path').forEach(it => {
+    it.onclick = function () {
+      
+      const thisId = parseInt(this.dataset.id, 10)
+      this.parentElement.dataset.chosen = thisId;
+
+      let tempMax = 0;
+			for (g of groups) {
+				if (tempMax < parseInt(g.dataset.chosen)) tempMax = parseInt(g.dataset.chosen);
+			}
+			maxVal = tempMax;
+    
+    }
+  })
+
+
 
   moveDown.onclick = e => {
     e.preventDefault();
@@ -45,6 +56,10 @@ window.addEventListener('load', () => {
         showResult();
       } else {
         new Modal();
+        
+        document.addEventListener('modal-close', () => {
+          changeAllowScrolling(true, 'all');
+        });
         changeAllowScrolling(false, 'all');
       }
     });
@@ -65,16 +80,19 @@ window.addEventListener('load', () => {
 
         if (mediaList.matches) {
           document.querySelector('.section--second .section__container').classList.add('hide');
-          fullpage_api.reBuild();
         }
+          fullpage_api.reBuild();
 
       } else {
         resultSectionContent.ontransitionend = () => {
           fillWithContent();
           resultSectionContent.ontransitionend = null;
           resultSectionContent.classList.remove('invisible');
+          fullpage_api.reBuild();
         }
         resultSectionContent.classList.add('invisible');
+
+        
       }
 
       changeAllowScrolling(false, 'up');
@@ -123,7 +141,7 @@ window.addEventListener('load', () => {
     const currentId = parseInt(this.dataset.id, 10);
     const color = this.parentElement.dataset.fill;
 
-    this.onclick = () => {
+    /*this.onclick = () => {
       const thisId = parseInt(this.dataset.id, 10)
       this.parentElement.dataset.chosen = thisId;
 
@@ -132,7 +150,7 @@ window.addEventListener('load', () => {
 				if (tempMax < parseInt(g.dataset.chosen)) tempMax = parseInt(g.dataset.chosen);
 			}
 			maxVal = tempMax;
-    }
+    }*/
 
     Array.from(this.parentElement.children).forEach((it, index) => {
       const fill = index > currentId - 1 ? 'rgba(255,255,255,0.001)' : color;
@@ -226,6 +244,8 @@ window.addEventListener('load', () => {
         bubbles: true
       });
       document.dispatchEvent(event);
+
+      
     }
 
     onModalClick = (e) => {

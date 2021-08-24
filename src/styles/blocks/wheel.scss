@@ -3,18 +3,18 @@
   text-align: center;
 
   &__image {
+    margin-bottom: vw(103);
 
-  margin-bottom: vw(103);
-	  svg{
-		  g{
-			  path{
-				  fill-opacity :0.6;
-				  stroke: white;
-				  stroke-width: 3;
-				  stroke-miterlimit: 10;
-			  }
-		  }
-	  }
+    svg {
+      g {
+        path {
+          fill-opacity: 0.6;
+          stroke: white;
+          stroke-width: 3;
+          stroke-miterlimit: 10;
+        }
+      }
+    }
 
     @include max(sm) {
       position: relative;
@@ -39,6 +39,7 @@
       font-size: vw(12, 414);
       color: #536587;
       background-color: #ffffff;
+      pointer-events: none;
     }
 
     &--acceptance {

@@ -18,6 +18,12 @@
     padding: vw(40);
     background-color: #ffffff;
     cursor: default;
+
+    @include max(sm) {
+      max-width: vw(400, 414);
+      padding: vw(40, 414);
+      font-size: vw(18, 414);
+    }
   }
 
   &__close {
@@ -31,5 +37,10 @@
     cursor: pointer;
 
     appearance: none;
+
+    @include max(sm) {
+      top: vw(12, 414);
+      right: vw(12, 414);
+    }
   }
 }
