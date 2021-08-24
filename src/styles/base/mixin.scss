@@ -67,6 +67,11 @@
     @content;
   }
 }
+
+@function vw($px, $resolutiond: 1920) {
+  @return (($px/$resolutiond) * 100) + vw;
+}
+
 @mixin hover {
   &:focus {
     outline: none;

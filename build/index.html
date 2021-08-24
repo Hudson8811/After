@@ -9,22 +9,24 @@
     <title>Главная</title>
   </head>
   <body>
+    <header class="header">
+      <div class="header__container"> 
+        <div class="header__rating">
+          <svg width="74" height="46">
+            <use xlink:href="images/sprite.svg#rating"></use>
+          </svg>
+        </div>
+        <div class="header__logo"> 
+          <svg width="195" height="44">
+            <use xlink:href="images/sprite.svg#woman"></use>
+          </svg>
+        </div>
+      </div>
+    </header>
     <main class="main">
       <div id="fullpage">
         <section class="section section--first">
           <div class="section__container container">
-            <header class="section__header">
-              <div class="section__rating">
-                <svg width="74" height="46">
-                  <use xlink:href="images/sprite.svg#rating"></use>
-                </svg>
-              </div>
-              <div class="section__logo"> 
-                <svg width="195" height="44">
-                  <use xlink:href="images/sprite.svg#woman"></use>
-                </svg>
-              </div>
-            </header>
             <div class="section__after-logo after-logo">
               <div class="after-logo__text after-logo__text--top">по мировому бестселлеру</div>
               <div class="after-logo__text after-logo__text--bottom">в кино с 2 сентября</div><img src="images/after-logo.png" srcset="images/after-logo@2x.png 2x" width="394" height="394" alt="После. Глава 3">
@@ -44,7 +46,6 @@
               <li>Закрасьте сектор в соответствии с тем, как много места в вашей жизни занимает тот или иной процесс</li>
               <li>Повторите с каждым сектором</li>
             </ol>
-            <div class="section__text">Колесо баланса – методика, придуманная Полом Дж. Мейером, гуру по личностному росту и саморазвитию, в 70-х годах XX века. Сегодня этот прием активно применяется на тренингах и психологических семинарах по всему миру. Смысл техники – помочь человеку расставить жизненные приоритеты и выделить «провисающие» сферы. В классическом варианте колесо баланса состоит из 5-10 секторов, связанных с различными сферами жизни. В нашем колесе каждый сектор – определенная сторона взаимоотношений в паре. Оцените каждую из них по шкале от 1 до 10, и система выдаст результат. Учиться на ошибках будем на примере рокового красавчика Хардина и наивной умницы Тессы – главных героев франшизы, на долю которых в третьей части выпадет особенно много эмоциональных испытаний. </div>
             <div class="section__wheel wheel">
               <div class="wheel__image"><svg viewBox="0 0 656 656" fill="none" xmlns="http://www.w3.org/2000/svg">
 <!--<g clip-path="url(#clip0)">-->
@@ -157,6 +158,7 @@
                 <div class="wheel__aspect wheel__aspect--jealousy">Ревность</div>
               </div><a class="wheel__btn btn btn--disabled __js_show-result" href="#" data-modal-text="">Посмотреть результат</a>
             </div>
+            <div class="section__text">Колесо баланса – методика, придуманная Полом Дж. Мейером, гуру по личностному росту и саморазвитию, в 70-х годах XX века. Сегодня этот прием активно применяется на тренингах и психологических семинарах по всему миру. Смысл техники – помочь человеку расставить жизненные приоритеты и выделить «провисающие» сферы. В классическом варианте колесо баланса состоит из 5-10 секторов, связанных с различными сферами жизни. В нашем колесе каждый сектор – определенная сторона взаимоотношений в паре. Оцените каждую из них по шкале от 1 до 10, и система выдаст результат. Учиться на ошибках будем на примере рокового красавчика Хардина и наивной умницы Тессы – главных героев франшизы, на долю которых в третьей части выпадет особенно много эмоциональных испытаний. </div>
           </div>
           <section class="result-section invisible __js_result-section">
             <div class="result-section__container container">
@@ -181,19 +183,23 @@
     </main>
     <footer class="footer">
       <div class="footer__container container">
-        <div class="footer__social social"> <a href="#">
+        <div class="footer__social social"> <a class="social__item social__item--vk" href="#">
             <svg width="14" height="15">
               <use xlink:href="images/sprite.svg#vk"></use>
-            </svg></a><a href="#">
+            </svg></a><a class="social__item social__item--fb" href="#">
             <svg width="11" height="20">
               <use xlink:href="images/sprite.svg#fb"></use>
-            </svg></a><a href="#">
+            </svg></a><a class="social__item social__item--ok" href="#">
             <svg width="12" height="20">
               <use xlink:href="images/sprite.svg#ok"></use>
-            </svg></a><a href="#">
+            </svg></a><a class="social__item social__item--tw" href="#">
             <svg width="19" height="16">
               <use xlink:href="images/sprite.svg#tw"></use>
             </svg></a></div>
+        <div class="footer__copy">
+          <p>© 2021 AFTER WE FELL, LLC. ALL RIGHTS RESERVED.</p>
+          <p>© 2021 HSM production</p>
+        </div>
       </div>
     </footer>
     <script src="js/main.min.js"></script>

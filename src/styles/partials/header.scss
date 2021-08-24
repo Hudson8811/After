@@ -1,0 +1,53 @@
+.header {
+  position: absolute;
+  left: vw(50);
+  top: vw(40);
+  bottom: vw(70);
+  z-index: 1;
+  display: flex;
+
+  @include max(sm) {
+    display: block;
+    left: 0;
+    top: 0;
+    bottom: auto;
+    width: 100%;
+    padding-top: vw(21, 414);
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include max(sm) {
+      flex-direction: row;
+      padding: 0 vw(16, 414);
+    }
+  }
+
+  &__rating {
+    svg {
+      display: block;
+      width: vw(74);
+      height: auto;
+      fill: $beige;
+
+      @include max(sm) {
+        width: vw(51, 414);
+      }
+    }
+  }
+
+  &__logo {
+    svg {
+      display: block;
+      width: vw(195);
+      height: auto; //vw(44);
+
+      @include max(sm) {
+        width: vw(141.88, 414);
+      }
+    }
+  }
+}

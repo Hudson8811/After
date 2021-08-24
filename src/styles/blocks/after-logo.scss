@@ -1,6 +1,12 @@
 .after-logo {
   position: relative;
 
+  width: vw(394);
+
+  @include max(sm) {
+    width: vw(296, 414);
+  }
+
   img {
     display: block;
     width: 100%;
@@ -12,18 +18,30 @@
     left: 50%;
     transform: translateX(-50%);
 
-    font-size: 18px;
+    font-size: vw(18);
     line-height: 2;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    color: #e6e5b4;
+    color: $beige;
     white-space: nowrap;
 
+    @include max(sm) {
+      font-size: vw(12, 414);
+    }
+
     &--top {
-      top: 23px;
+      top: vw(23);
+
+      @include max(sm) {
+        top: vw(17, 414);
+      }
     }
     &--bottom {
-      bottom: 51px;
+      bottom: vw(51);
+
+      @include max(sm) {
+        bottom: vw(38, 414);
+      }
     }
   }
 }

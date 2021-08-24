@@ -4,13 +4,18 @@ window.addEventListener('load', () => {
   let sectorsKeys = [];
   let fp = null;
 
+  const mediaList = window.matchMedia('(max-width: 767px)');
+
   const moveDown = document.querySelector('.__js_move-down');
   const showResultBtn = document.querySelector('.__js_show-result');
   const groups = document.querySelectorAll('g[data-id]');
   const resultSection = document.querySelector('.__js_result-section');
   const resultSectionContent = resultSection.querySelector('.result-section__content');
 
+  
   fullpageInit();
+  
+  
 
   document.addEventListener('modal-close', () => {
     changeAllowScrolling(true, 'all');
@@ -89,6 +94,7 @@ window.addEventListener('load', () => {
 
   function resetResult() {
     sectorsKeys = [];
+    
     for (g of groups) {
       g.dataset.chosen = 0;
 
@@ -152,13 +158,26 @@ window.addEventListener('load', () => {
   function fullpageInit() {
     fp = new fullpage('#fullpage', {
       licenseKey: '930B3D8E-64114A48-BE58EB40-E2698A87',
-      verticalCentered: false
+      verticalCentered: false,
+      scrollOverflow: true,
     });
   }
 
   function changeAllowScrolling(bool, direction) {
     fullpage_api.setAllowScrolling(bool, direction);
     fullpage_api.setKeyboardScrolling(bool, direction);
+  }
+
+  window.fillPath = () => {
+    maxVal = 10;
+    const paths = document.querySelector('.wheel').querySelectorAll('path');
+
+    for (p of paths) {
+      p.setAttribute('fill', p.parentElement.dataset.fill);
+    }
+    for (g of groups) {
+      g.dataset.chosen = 10;
+    }
   }
 
   class Modal {

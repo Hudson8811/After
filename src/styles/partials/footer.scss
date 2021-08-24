@@ -3,11 +3,39 @@
   z-index: 1;
   left: 0;
   right: 0;
-  bottom: 49px;
+  bottom: vw(49);
   pointer-events: none;
+
+  @include max(sm) {
+    position: static;
+    padding-top: vw(78, 414);
+    padding-bottom: vw(20, 414);
+  }
 
   &__container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: flex-end;
+
+    @include max(sm) {
+      justify-content: center;
+    }
+  }
+
+  &__copy {
+    display: none;
+
+    @include max(sm) {
+      display: block;
+      width: 100%;
+      margin-top: vw(13, 414);
+
+      font-size: vw(12, 414);
+      line-height: (30 / 12);
+      color: #ffffff;
+      text-transform: uppercase;
+      font-weight: 700;
+      text-align: center;
+    }
   }
 }

@@ -5,6 +5,12 @@
   background-color: #96d4d8;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: 50% 50%;
+
+  @include max(sm) {
+    padding-top: vw(62, 414);
+    padding-bottom: vw(62, 414);
+  }
 
   &--first {
     background-image: url("../images/bg-1.jpg");
@@ -13,25 +19,50 @@
       background-image: url("../images/bg-1@2x.jpg");
     }
 
+    @include max(sm) {
+      background-image: url("../images/mobile-bg.jpg");
+      background-size: 100% auto;
+      background-position: 50% 0;
+
+      @include retina {
+        background-image: url("../images/mobile-bg@2x.jpg");
+      }
+    }
+
     #{$self}__title {
-      max-width: 990px;
-      margin: 0 auto 20px;
+      max-width: vw(990);
+      margin: 0 auto vw(20);
 
       font-family: "18VAG";
       font-weight: 700;
-      font-size: 63px;
+      font-size: vw(63);
       line-height: (65 / 63);
       color: #ffffff;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       text-align: center;
+
+      @include max(sm) {
+        max-width: vw(384, 414);
+        margin-bottom: vw(20, 414);
+        font-size: vw(26, 414);
+        line-height: (30 / 26);
+        letter-spacing: 0.05em;
+      }
     }
 
     #{$self}__text {
-      max-width: 1123px;
-      margin: 0 auto 48px;
+      max-width: vw(1123);
+      margin: 0 auto vw(48);
       text-align: center;
       color: #ffffff;
+
+      @include max(sm) {
+        max-width: vw(349, 414);
+        margin-bottom: vw(30, 414);
+        font-size: vw(18, 414);
+        line-height: (25 / 18);
+      }
     }
 
     #{$self}__btn {
@@ -49,9 +80,22 @@
       background-image: url("../images/bg-2@2x.jpg");
     }
 
+    @include max(sm) {
+      background-image: url("../images/mobile-bg-2.jpg");
+
+      @include retina {
+        background-image: url("../images/mobile-bg-2@2x.jpg");
+      }
+    }
+
     #{$self}__container {
       display: grid;
-      grid-template-columns: 736px 1fr;
+      grid-template-columns: vw(736) 1fr;
+      align-content: start;
+
+      @include max(sm) {
+        display: block;
+      }
     }
 
     #{$self}__rating {
@@ -62,91 +106,98 @@
 
     #{$self}__info {
       grid-column: 1;
-      margin-top: 156px;
+      margin-top: vw(156);
+
+      @include max(sm) {
+        margin-top: vw(43, 414);
+      }
     }
 
     #{$self}__text {
       grid-column: 1;
       grid-row: 2;
-      margin-top: 67px;
-      margin-left: 150px;
+      margin-top: vw(67);
+      margin-left: vw(150);
+
+      @include max(sm) {
+        max-width: vw(349, 414);
+        margin: vw(45, 414) auto 0;
+      }
     }
 
     #{$self}__wheel {
       position: relative;
-      left: 81px;
+      left: vw(81);
       grid-column: 2;
       grid-row: 1 / span 2;
-      width: 656px;
-      height: 656px;
-      margin: 59px auto;
-    }
-  }
+      width: vw(656);
+      height: vw(656);
+      margin: vw(59) auto;
 
-  &--third {
-    background-image: url("../images/bg-2.jpg");
-
-    @include retina {
-      background-image: url("../images/bg-2@2x.jpg");
-    }
-
-    #{$self}__container {
-      display: flex;
-      flex-direction: row-reverse;
+      @include max(sm) {
+        left: 0;
+        width: vw(349, 414);
+        height: auto;
+        margin: vw(59, 414) auto;
+      }
     }
   }
 
   &__after-logo {
-    width: 394px;
     margin: 0 auto;
   }
 
-  &__header {
-    position: absolute;
-    left: 50px;
-    top: 40px;
-    bottom: 70px;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
+  &__container {
+    min-height: vw(960);
 
-  &__rating {
-    svg {
-      fill: $beige;
+    @include max(sm) {
+      min-height: 0;
     }
   }
 
-  &__logo {
-  }
-
   &__title {
-    margin-bottom: 37px;
-    font-size: 48px;
+    margin-bottom: vw(37);
+    font-size: vw(48);
     line-height: 1;
     font-weight: 700;
     color: $beige;
     text-transform: uppercase;
+
+    @include max(sm) {
+      font-size: vw(35, 414);
+      margin-bottom: vw(37, 414);
+    }
   }
 
   &__info {
     list-style-position: inside;
-    max-width: 573px;
-    margin-left: 150px !important;
-    font-size: 30px;
+    max-width: vw(573);
+    margin-left: vw(150) !important;
+    font-size: vw(30);
     line-height: 1.333333333333;
     color: #ffffff;
     letter-spacing: 0.03em;
 
+    @include max(sm) {
+      max-width: none;
+      margin-left: 0 !important;
+      font-size: vw(22, 414);
+      line-height: (30 / 22);
+    }
+
     li + li {
-      margin-top: 12px;
+      margin-top: vw(12);
     }
   }
 
   &__text {
     & + & {
-      margin-top: 40px;
+      margin-top: vw(40);
+    }
+
+    @include max(sm) {
+      font-size: vw(18, 414);
+      line-height: (25 / 18);
     }
   }
 }

@@ -3,7 +3,8 @@
   text-align: center;
 
   &__image {
-    margin-bottom: 103px;
+
+  margin-bottom: vw(103);
 	  svg{
 		  g{
 			  path{
@@ -14,6 +15,11 @@
 			  }
 		  }
 	  }
+
+    @include max(sm) {
+      position: relative;
+      margin-bottom: vw(103, 414);
+    }
   }
 
   &__btn {
@@ -21,46 +27,88 @@
 
   &__aspect {
     position: absolute;
-    font-size: 18px;
+    font-size: vw(18);
     line-height: 1;
     color: #ffffff;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.04em;
 
+    @include max(sm) {
+      padding: 5px;
+      font-size: vw(12, 414);
+      color: #536587;
+      background-color: #ffffff;
+    }
+
     &--acceptance {
       top: 6.5%;
       left: 1%;
+
+      @include max(sm) {
+        left: -4%;
+      }
     }
 
     &--independence {
       top: 6.5%;
       left: 84.5%;
+
+      @include max(sm) {
+        left: 68.5%;
+      }
     }
 
     &--passion {
       top: 43.7%;
       left: 102.5%;
+
+      @include max(sm) {
+        top: 32.7%;
+        left: 82.5%;
+      }
     }
 
     &--softness {
       top: 91.4%;
       left: 85%;
+
+      @include max(sm) {
+        top: 76.4%;
+        left: 81%;
+      }
     }
 
     &--complementarity {
       top: 105%;
       left: 30%;
+
+      @include max(sm) {
+        top: 107%;
+        left: 25%;
+      }
     }
 
     &--safety {
       top: 91.4%;
       left: -22%;
+
+      @include max(sm) {
+        max-width: vw(118, 414);
+        top: 74.4%;
+        left: -5%;
+        text-align: left;
+      }
     }
 
     &--jealousy {
       top: 43.7%;
       left: -18%;
+
+      @include max(sm) {
+        top: 41.7%;
+        left: -5%;
+      }
     }
   }
 }
