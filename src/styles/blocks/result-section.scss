@@ -9,6 +9,9 @@
   transition: opacity 0.3s ease;
 
   background-image: url("../images/bg-2.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50% 50%;
 
   @include retina {
     background-image: url("../images/bg-2@2x.jpg");
