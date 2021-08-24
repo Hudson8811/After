@@ -93,7 +93,7 @@ window.addEventListener('load', () => {
       g.dataset.chosen = 0;
 
       for (path of g.children) {
-        path.setAttribute('fill', 'none');
+        path.setAttribute('fill', 'rgba(255,255,255,0.001)');
       }
     }
 
@@ -110,13 +110,15 @@ window.addEventListener('load', () => {
       const thisId = parseInt(this.dataset.id, 10)
       this.parentElement.dataset.chosen = thisId;
 
-      if (maxVal < thisId) {
-        maxVal = thisId;
-      }
+      let tempMax = 0;
+			for (g of groups) {
+				if (tempMax < parseInt(g.dataset.chosen)) tempMax = parseInt(g.dataset.chosen);
+			}
+			maxVal = tempMax;
     }
 
     Array.from(this.parentElement.children).forEach((it, index) => {
-      const fill = index > currentId - 1 ? 'none' : color;
+      const fill = index > currentId - 1 ? 'rgba(255,255,255,0.001)' : color;
       it.setAttribute('fill', fill);
     })
   }
@@ -125,7 +127,7 @@ window.addEventListener('load', () => {
     const comleteId = parseInt(this.dataset.chosen, 10);
 
     Array.from(this.children).forEach((it, index) => {
-      const fill = index > comleteId - 1 ? 'none' : this.dataset.fill;
+      const fill = index > comleteId - 1 ? 'rgba(255,255,255,0.001)' : this.dataset.fill;
       it.setAttribute('fill', fill);
       
       it.onmouseenter = null;
