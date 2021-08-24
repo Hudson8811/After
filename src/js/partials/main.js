@@ -216,6 +216,7 @@ window.addEventListener('load', () => {
       this.el.addEventListener('click', this.onModalClick);
       this.render();
       document.body.append(this.el);
+      document.body.classList.add('modal-open');
       document.addEventListener('keydown', this.onKeydown);
     }
     
@@ -238,20 +239,20 @@ window.addEventListener('load', () => {
 
     close = () => {
       this.el.remove();
+      
+      document.body.classList.remove('modal-open');
 
       const event = new CustomEvent('modal-close', {
         detail: 'close',
         bubbles: true
       });
       document.dispatchEvent(event);
-
-      
     }
 
     onModalClick = (e) => {
       const target = e.target;
 
-      if (target.closest('.modal__close') || target.closest('.modal') && !target.closest('.modal__inner')) {
+      if (target.closest('.modal__close') || target.closest('.modal') && !target.closest('.modal__inner') && document.body.classList.contains('modal-open')) {
         this.close();
       }
     }
