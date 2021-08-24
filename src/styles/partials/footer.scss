@@ -13,6 +13,10 @@
     padding-bottom: vw(8, 414);
   }
 
+  @include min(xxl) {
+    bottom: 49px;
+  }
+
   &__container {
     display: flex;
     flex-wrap: wrap;

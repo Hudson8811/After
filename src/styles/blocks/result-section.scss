@@ -9,9 +9,9 @@
   transition: opacity 0.3s ease;
 
   background-image: url("../images/bg-2.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
 
   @include retina {
     background-image: url("../images/bg-2@2x.jpg");
@@ -66,6 +66,13 @@
       padding-bottom: 0;
     }
 
+    @include min(xxl) {
+      max-width: 668px;
+      margin-left: 150px;
+      padding-top: 100px;
+      padding-bottom: 150px;
+    }
+
     &.invisible {
       opacity: 0;
     }
@@ -80,6 +87,10 @@
         max-height: none;
         min-height: 0;
       }
+
+      @include min(xxl) {
+        min-height: 300px;
+      }
     }
 
     #{$self}__btn {
@@ -87,6 +98,10 @@
 
       @include max(sm) {
         margin-top: vw(20, 414);
+      }
+
+      @include min(xxl) {
+        margin-top: 20px;
       }
     }
   }
@@ -109,6 +124,11 @@
       margin-bottom: vw(14, 414);
       font-size: vw(35, 414);
     }
+
+    @include min(xxl) {
+      margin-bottom: 37px;
+      font-size: 48px;
+    }
   }
 
   &__text {
@@ -122,6 +142,10 @@
 
       @include max(sm) {
         margin-top: vw(20, 414);
+      }
+
+      @include min(xxl) {
+        margin-top: 40px;
       }
     }
   }
@@ -138,6 +162,11 @@
       margin-left: vw(-16, 414);
       margin-right: 0;
       margin-bottom: vw(40, 414);
+    }
+
+    @include min(xxl) {
+      width: 937px;
+      margin-right: -50px;
     }
 
     & > img {
@@ -167,6 +196,11 @@
         left: 50%;
         bottom: 0;
         transform: translateX(-50%);
+      }
+
+      @include min(xxl) {
+        left: 33px;
+        bottom: 23px;
       }
     }
   }

@@ -7,6 +7,10 @@
     width: vw(296, 414);
   }
 
+  @include min(xxl) {
+    width: 394px;
+  }
+
   img {
     display: block;
     width: 100%;
@@ -29,18 +33,31 @@
       font-size: vw(12, 414);
     }
 
+    @include min(xxl) {
+      font-size: 18px;
+    }
+
     &--top {
       top: vw(23);
 
       @include max(sm) {
         top: vw(17, 414);
       }
+
+      @include min(xxl) {
+        top: 23px;
+      }
     }
+
     &--bottom {
       bottom: vw(51);
 
       @include max(sm) {
         bottom: vw(38, 414);
+      }
+
+      @include min(xxl) {
+        bottom: 51px;
       }
     }
   }

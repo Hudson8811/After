@@ -1,5 +1,9 @@
 html {
   font-size: $fs-main;
+
+  @include min(xxl) {
+    font-size: 20px;
+  }
 }
 body {
   font-family: $mainFont;
@@ -9,12 +13,16 @@ body {
 
 .container {
   width: 100%;
-  //max-width: 1920px;
+  max-width: 1920px;
   padding: 0 vw(50);
   margin: 0 auto;
 
   @include max(sm) {
     padding: 0 vw(16, 414);
+  }
+
+  @include min(xxl) {
+    padding: 0 50px;
   }
 }
 

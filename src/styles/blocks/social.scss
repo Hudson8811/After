@@ -23,6 +23,12 @@
       margin-top: vw(8, 414);
     }
 
+    @include min(xxl) {
+      width: 52px;
+      height: 52px;
+      margin-top: 8px;
+    }
+
     svg {
       align-self: center;
 
@@ -40,6 +46,10 @@
           width: vw(14, 414);
           height: vw(15, 414);
         }
+        @include min(xxl) {
+          width: 14px;
+          height: 15px;
+        }
       }
     }
     &--fb {
@@ -50,6 +60,11 @@
         @include max(sm) {
           width: vw(11, 414);
           height: vw(20, 414);
+        }
+
+        @include min(xxl) {
+          width: 11px;
+          height: 20px;
         }
       }
     }
@@ -62,6 +77,11 @@
           width: vw(12, 414);
           height: vw(20, 414);
         }
+
+        @include min(xxl) {
+          width: 12px;
+          height: 20px;
+        }
       }
     }
     &--tw {
@@ -73,6 +93,11 @@
           width: vw(19, 414);
           height: vw(16, 414);
         }
+
+        @include min(xxl) {
+          width: 19px;
+          height: 16px;
+        }
       }
     }
   }
@@ -82,6 +107,10 @@
 
     @include max(sm) {
       margin-left: vw(12, 414);
+    }
+
+    @include min(xxl) {
+      margin-left: 12px;
     }
   }
 }

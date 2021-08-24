@@ -15,6 +15,12 @@
     padding-top: vw(21, 414);
   }
 
+  @include min(xxl) {
+    left: 50px;
+    top: 40px;
+    bottom: 70px;
+  }
+
   &__container {
     display: flex;
     flex-direction: column;
@@ -36,6 +42,10 @@
       @include max(sm) {
         width: vw(51, 414);
       }
+
+      @include min(xxl) {
+        width: 74px;
+      }
     }
   }
 
@@ -47,6 +57,10 @@
 
       @include max(sm) {
         width: vw(141.88, 414);
+      }
+
+      @include min(xxl) {
+        width: 195px;
       }
     }
   }

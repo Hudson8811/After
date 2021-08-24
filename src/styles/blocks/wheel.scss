@@ -20,6 +20,10 @@
       position: relative;
       margin-bottom: vw(103, 414);
     }
+
+    @include min(xxl) {
+      margin-bottom: 103px;
+    }
   }
 
   &__btn {
@@ -40,6 +44,10 @@
       color: #536587;
       background-color: #ffffff;
       pointer-events: none;
+    }
+
+    @include min(xxl) {
+      font-size: 18px;
     }
 
     &--acceptance {

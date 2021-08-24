@@ -23,6 +23,13 @@
     border-radius: vw(37, 414);
   }
 
+  @include min(xxl) {
+    min-width: 286px;
+    padding: 30px 29px 24px;
+    font-size: 20px;
+    border-radius: 37px;
+  }
+
   @include hover {
     background-color: lighten($beige, 5%);
   }

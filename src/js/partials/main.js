@@ -15,6 +15,10 @@ window.addEventListener('load', () => {
 
   fullpageInit();
 
+  window.addEventListener('resize', () => {
+    fullpage_api.reBuild();
+  })
+
   document.querySelectorAll('.wheel path').forEach(it => {
     it.onclick = function () {
       
@@ -28,9 +32,7 @@ window.addEventListener('load', () => {
 			maxVal = tempMax;
     
     }
-  })
-
-
+  });
 
   moveDown.onclick = e => {
     e.preventDefault();
