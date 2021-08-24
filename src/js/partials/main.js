@@ -1,10 +1,26 @@
 window.addEventListener('load', () => {
+  const html = document.documentElement;
   let data = null;
   let maxVal = 0;
   let sectorsKeys = [];
   let fp = null;
+  let resizeId;
 
-  const mediaList = window.matchMedia('(max-width: 767px)');
+  //const mediaList = window.matchMedia('(max-width: 767px)');
+
+  let overflowScroll = html.clientWidth <= 767;
+
+  window.addEventListener('resize', () => {
+    overflowScroll = html.clientWidth <= 767;
+    clearTimeout(resizeId);
+    resizeId = setTimeout(reInitFullpage, 500);
+  });
+
+  function reInitFullpage(){
+    fullpage_api.destroy('all');
+    fullpageInit();
+  }
+
 
   const moveDown = document.querySelector('.__js_move-down');
   const showResultBtn = document.querySelector('.__js_show-result');
@@ -80,7 +96,7 @@ window.addEventListener('load', () => {
         resultSection.classList.remove('invisible');
         fillWithContent();
 
-        if (mediaList.matches) {
+        if (html.clientWidth <= 767) {
           document.querySelector('.section--second .section__container').classList.add('hide');
         }
           fullpage_api.reBuild();
@@ -132,7 +148,7 @@ window.addEventListener('load', () => {
     resultSection.classList.add('invisible');
     changeAllowScrolling(true, 'up');
 
-    if (mediaList.matches) {
+    if (html.clientWidth <= 767) {
       document.querySelector('.section--second .section__container').classList.remove('hide');
       fullpage_api.reBuild();
     }
@@ -190,7 +206,7 @@ window.addEventListener('load', () => {
     fp = new fullpage('#fullpage', {
       licenseKey: '930B3D8E-64114A48-BE58EB40-E2698A87',
       verticalCentered: false,
-      scrollOverflow: true,
+      scrollOverflow: overflowScroll,
     });
   }
 
@@ -215,14 +231,16 @@ window.addEventListener('load', () => {
     constructor() {
       this.el = document.createElement('div');
       this.el.classList.add('modal');
-      this.el.addEventListener('click', this.onModalClick);
+      this.el.addEventListener('click', this.onModalClick.bind(this));
       this.render();
       document.body.append(this.el);
       document.body.classList.add('modal-open');
       document.addEventListener('keydown', this.onKeydown);
+
+
     }
     
-    render = () => {
+    render() {
       const btn = document.querySelector('.__js_show-result');
       let message = 'Для просмотра результата необходимо заполнить все секторы.';
 
@@ -239,7 +257,7 @@ window.addEventListener('load', () => {
         </div>`;
     }
 
-    close = () => {
+    close() {
       this.el.remove();
       
       document.body.classList.remove('modal-open');
@@ -251,7 +269,7 @@ window.addEventListener('load', () => {
       document.dispatchEvent(event);
     }
 
-    onModalClick = (e) => {
+    onModalClick(e) {
       const target = e.target;
 
       if (target.closest('.modal__close') || target.closest('.modal') && !target.closest('.modal__inner') && document.body.classList.contains('modal-open')) {
@@ -259,7 +277,7 @@ window.addEventListener('load', () => {
       }
     }
 
-    onKeydown = (e) => {
+    onKeydown(e) {
       if (e.key === 'Escape') {
         this.close();
         document.removeEventListener('keydown', this.onKeydown);

@@ -123,14 +123,14 @@
 
     #{$self}__info {
       grid-column: 1;
-      margin-top: vw(156);
+      margin-top: vw(80);
 
       @include max(sm) {
         margin-top: vw(43, 414);
       }
 
       @include min(xxl) {
-        margin-top: 156px;
+        margin-top: 80px;
       }
     }
 

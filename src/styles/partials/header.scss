@@ -2,7 +2,7 @@
   position: absolute;
   left: vw(50);
   top: vw(40);
-  bottom: vw(70);
+  bottom: vw(22);
   z-index: 1;
   display: flex;
 
@@ -18,7 +18,7 @@
   @include min(xxl) {
     left: 50px;
     top: 40px;
-    bottom: 70px;
+    bottom: 22px;
   }
 
   &__container {
@@ -50,6 +50,12 @@
   }
 
   &__logo {
+    margin-top: auto;
+
+    @include max(sm) {
+      margin-top: 0;
+    }
+
     svg {
       display: block;
       width: vw(195);
@@ -62,6 +68,25 @@
       @include min(xxl) {
         width: 195px;
       }
+    }
+  }
+
+  &__copy {
+    margin-left: vw(9);
+    font-size: vw(12);
+    line-height: (36 / 12);
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+
+    @include max(sm) {
+      display: none;
+    }
+
+    @include min(xxl) {
+      margin-left: 9px;
+      font-size: 12px;
     }
   }
 }
