@@ -6,6 +6,15 @@
   bottom: vw(49);
   pointer-events: none;
 
+  transition: opacity 0.8s ease;
+  transition-delay: 0.3s;
+
+  &.anim {
+    @include min(768) {
+      opacity: 0;
+    }
+  }
+
   @include max(sm) {
     //position: static;
     bottom: 0;

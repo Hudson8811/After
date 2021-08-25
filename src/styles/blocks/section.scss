@@ -41,6 +41,8 @@
       letter-spacing: 0.1em;
       text-transform: uppercase;
       text-align: center;
+      transition: opacity 0.8s ease, transform 0.8s ease;
+      transition-delay: 0.7s;
 
       @include max(sm) {
         max-width: vw(384, 414);
@@ -63,6 +65,9 @@
       text-align: center;
       color: #ffffff;
 
+      transition: opacity 0.8s ease, transform 0.8s ease;
+      transition-delay: 0.9s;
+
       @include max(sm) {
         max-width: vw(349, 414);
         margin-bottom: vw(30, 414);
@@ -79,7 +84,46 @@
     #{$self}__btn {
       position: relative;
       left: 50%;
-      transform: translateX(-50%);
+      margin-left: -143px;
+
+      transition: opacity 0.8s ease, transform 0.8s ease;
+      transition-delay: 1.1s;
+    }
+
+    #{$self}__after-logo {
+      transition: opacity 0.8s ease, transform 0.8s ease;
+      transition-delay: 0.5s;
+    }
+
+    &.anim {
+      #{$self}__after-logo {
+        @include min(768) {
+          transform: translateY(-30px);
+        }
+      }
+      #{$self}__title {
+        @include min(768) {
+          transform: translateY(30px);
+        }
+      }
+      #{$self}__text {
+        @include min(768) {
+          transform: translateY(30px);
+        }
+      }
+      #{$self}__btn {
+        @include min(768) {
+          transform: translateY(30px);
+        }
+      }
+      #{$self}__after-logo,
+      #{$self}__title,
+      #{$self}__text,
+      #{$self}__btn {
+        @include min(768) {
+          opacity: 0;
+        }
+      }
     }
   }
 
@@ -115,15 +159,11 @@
       }
     }
 
-    #{$self}__rating {
-      svg {
-        fill: #96d4d8;
-      }
-    }
-
     #{$self}__info {
       grid-column: 1;
       margin-top: vw(80);
+
+      transition: opacity 0.8s ease, transform 0.8s ease;
 
       @include max(sm) {
         margin-top: vw(43, 414);
@@ -139,6 +179,9 @@
       grid-row: 2;
       margin-top: vw(67);
       margin-left: vw(150);
+
+      transition: opacity 0.8s ease, transform 0.8s ease;
+      transition-delay: 0.2s;
 
       @include max(sm) {
         max-width: vw(349, 414);
@@ -160,6 +203,9 @@
       height: vw(656);
       margin: vw(59) auto;
 
+      transition: opacity 0.8s ease, transform 0.8s ease;
+      //transition-delay: 0.4s;
+
       @include max(sm) {
         left: 0;
         width: vw(349, 414);
@@ -172,6 +218,32 @@
         width: 656px;
         height: 656px;
         margin: 59px auto;
+      }
+    }
+
+    &.anim {
+      #{$self}__info,
+      #{$self}__text,
+      #{$self}__wheel {
+        @include min(768) {
+          opacity: 0;
+        }
+      }
+
+      #{$self}__info {
+        @include min(768) {
+          transform: translateY(30px);
+        }
+      }
+      #{$self}__text {
+        @include min(768) {
+          transform: translateY(30px);
+        }
+      }
+      #{$self}__wheel {
+        @include min(768) {
+          transform: translateX(30px);
+        }
       }
     }
   }

@@ -5,9 +5,6 @@ window.addEventListener('load', () => {
   let sectorsKeys = [];
   let fp = null;
   let resizeId;
-
-  //const mediaList = window.matchMedia('(max-width: 767px)');
-
   let overflowScroll = html.clientWidth <= 767;
 
   window.addEventListener('resize', () => {
@@ -105,11 +102,13 @@ window.addEventListener('load', () => {
     if (sectorsKeys.length) {
       const key = sectorsKeys.pop();
 
-      const instance = fullpage_api.getActiveSection().item.querySelector('.fp-scrollable').fp_iscrollInstance;
-      instance.scrollTo(0, 0, 0);
-      setTimeout(function () {
-        instance.refresh();
-      }, 150);
+      if (overflowScroll) {
+        const instance = fullpage_api.getActiveSection().item.querySelector('.fp-scrollable').fp_iscrollInstance;
+        instance.scrollTo(0, 0, 0);
+        setTimeout(function () {
+          instance.refresh();
+        }, 150);
+      }
 
       if (resultSection.classList.contains('invisible')) {
         resultSection.classList.remove('invisible');
@@ -231,26 +230,30 @@ window.addEventListener('load', () => {
       licenseKey: '930B3D8E-64114A48-BE58EB40-E2698A87',
       verticalCentered: false,
       scrollOverflow: overflowScroll,
+      scrollOverflowReset: true,
       afterLoad: function () {
+        document.querySelector('.header').classList.remove('anim');
+        document.querySelector('.footer').classList.remove('anim');
+        fullpage_api.getActiveSection().item.classList.remove('anim');
 
-        footerHint.classList.remove('invisible');
-        const instance = this.item.querySelector('.fp-scrollable').fp_iscrollInstance;
+        if (overflowScroll) {
+          
+          const instance = fullpage_api.getActiveSection().item.querySelector('.fp-scrollable').fp_iscrollInstance;
 
-        this.item.ontouchend = () => {
-          setTimeout(function() {
+          instance.y < -50 ? footerHint.classList.add('invisible') : footerHint.classList.remove('invisible');
+
+          fullpage_api.getActiveSection().item.ontouchend = () => {
             instance.y < -50 ? footerHint.classList.add('invisible') : footerHint.classList.remove('invisible');
-          }, 150)
+          }
         }
+      },
+      onLeave: function(origin, destination, direction){
+        //console.log(origin, destination)
+        //origin.item.classList.toggle('anim')
+       
       }
     });
   }
-  /*
-  var instance = fullpage_api.getActiveSection().item.querySelector('.fp-scrollable').fp_iscrollInstance;
-            instance.scrollTo(0, 0, 0);
-            setTimeout(function () {
-                instance.refresh();
-            }, 150);
-  */
 
   function changeAllowScrolling(bool, direction) {
     fullpage_api.setAllowScrolling(bool, direction);

@@ -6,6 +6,15 @@
   z-index: 1;
   display: flex;
 
+  transition: opacity 0.8s ease;
+  transition-delay: 0.3s;
+
+  &.anim {
+    @include min(768) {
+      opacity: 0;
+    }
+  }
+
   @include max(sm) {
     display: block;
     left: 0;
