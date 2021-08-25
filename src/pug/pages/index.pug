@@ -48,14 +48,17 @@ block main
 					
 
 					a.wheel__btn.btn.btn--disabled.__js_show-result(href="#", data-modal-text="") Посмотреть результат
+
 				
 				.section__text
 					| Колесо баланса – методика, придуманная Полом Дж. Мейером, гуру по личностному росту и саморазвитию, в 70-х годах XX века. Сегодня этот прием активно применяется на тренингах и психологических семинарах по всему миру. Смысл техники – помочь человеку расставить жизненные приоритеты и выделить «провисающие» сферы. В классическом варианте колесо баланса состоит из 5-10 секторов, связанных с различными сферами жизни. В нашем колесе каждый сектор – определенная сторона взаимоотношений в паре. Оцените каждую из них по шкале от 1 до 10, и система выдаст результат. Учиться на ошибках будем на примере рокового красавчика Хардина и наивной умницы Тессы – главных героев франшизы, на долю которых в третьей части выпадет особенно много эмоциональных испытаний. 
 
 			section.result-section.invisible.__js_result-section
 				.result-section__container.container
-					.result-section__aside 
-						img(src="images/result-image.jpg", srcset="images/result-image@2x.jpg 2x", width="937", height="1020", alt="Страсть")
+					.result-section__aside
+						each item in ASPECTS
+							img(class= item.mod, src="images/" + item.mod + ".jpg",  width="937", height="1020", alt= item.text)
+						//-img(src="images/result-image.jpg", srcset="images/result-image@2x.jpg 2x", width="937", height="1020", alt="Страсть")
 						.result-section__aside-logo.after-logo
 							.after-logo__text.after-logo__text--top по мировому бестселлеру
 							.after-logo__text.after-logo__text--bottom в кино с 2 сентября

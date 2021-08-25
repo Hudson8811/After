@@ -43,4 +43,45 @@
       text-align: center;
     }
   }
+
+  &__hint {
+    display: none;
+
+    @include max(sm) {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: vw(16, 414);
+      transform: translateY(-100%);
+      animation-name: downUp;
+      animation-iteration-count: infinite;
+      animation-duration: 2s;
+
+      transition: opacity 0.3s ease;
+
+      &.invisible {
+        opacity: 0;
+      }
+
+      svg {
+        display: block;
+        width: vw(32, 414);
+        height: vw(32, 414);
+
+        fill: #ffffff;
+      }
+    }
+  }
+}
+
+@keyframes downUp {
+  0% {
+    transform: translateY(-100%);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
 }

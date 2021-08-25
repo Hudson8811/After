@@ -164,6 +164,11 @@
     margin-right: vw(-50);
     margin-left: auto;
     overflow: hidden;
+    transition: opacity 0.3s ease;
+
+    &.invisible {
+      opacity: 0;
+    }
 
     @include max(sm) {
       width: 100vw;
@@ -183,8 +188,16 @@
       height: 100%;
       object-fit: cover;
 
-      @include max(sm) {
+      position: absolute;
+      opacity: 0;
+
+      &.active {
         position: relative;
+        z-index: 1;
+        opacity: 1;
+      }
+
+      @include max(sm) {
         left: 50%;
         max-width: none;
         width: 140%;

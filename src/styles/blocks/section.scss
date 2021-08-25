@@ -263,4 +263,14 @@
       line-height: (25 / 18);
     }
   }
+
+  &__hint {
+    position: fixed;
+    bottom: vw(100, 414);
+    right: 16px;
+
+    svg {
+      fill: #ffffff;
+    }
+  }
 }
