@@ -60,6 +60,16 @@ window.addEventListener('load', () => {
 			})
     }
 
+    it.ontouchstart = function () {
+			const currentId = parseInt(this.dataset.id, 10);
+			const color = this.parentElement.dataset.fill;
+
+			Array.from(this.parentElement.children).forEach((it, index) => {
+				const fill = index > currentId - 1 ? 'rgba(255,255,255,0.001)' : color;
+				it.setAttribute('fill', fill);
+			})
+    }
+
   });
 
 
