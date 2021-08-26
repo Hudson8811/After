@@ -47,11 +47,17 @@ window.addEventListener('load', () => {
 				if (tempMax < parseInt(g.dataset.chosen)) tempMax = parseInt(g.dataset.chosen);
 			}
 			maxVal = tempMax;
-    }
 
+			const currentId = parseInt(this.dataset.id, 10);
+			const color = this.parentElement.dataset.fill;
+
+			Array.from(this.parentElement.children).forEach((it, index) => {
+				const fill = index > currentId - 1 ? 'rgba(255,255,255,0.001)' : color;
+				it.setAttribute('fill', fill);
+			})
+    }
 
     it.onmouseenter = function () {
-			console.log('onmouseenter');
 			const currentId = parseInt(this.dataset.id, 10);
 			const color = this.parentElement.dataset.fill;
 
@@ -60,26 +66,7 @@ window.addEventListener('load', () => {
 				it.setAttribute('fill', fill);
 			})
     }
-
-    it.ontouchstart = function () {
-    	console.log('ontouchstart');
-			const currentId = parseInt(this.dataset.id, 10);
-			const color = this.parentElement.dataset.fill;
-
-			Array.from(this.parentElement.children).forEach((it, index) => {
-				const fill = index > currentId - 1 ? 'rgba(255,255,255,0.001)' : color;
-				it.setAttribute('fill', fill);
-			})
-    }
-
-
-		it.ontouchend = function () {
-			console.log('ontouchend');
-		}
-		it.touchmove = function () {
-			console.log('touchmove');
-		}
-
+    
   });
 
 
