@@ -51,6 +51,7 @@ window.addEventListener('load', () => {
 
 
     it.onmouseenter = function () {
+			console.log('onmouseenter');
 			const currentId = parseInt(this.dataset.id, 10);
 			const color = this.parentElement.dataset.fill;
 
@@ -61,6 +62,7 @@ window.addEventListener('load', () => {
     }
 
     it.ontouchstart = function () {
+    	console.log('ontouchstart');
 			const currentId = parseInt(this.dataset.id, 10);
 			const color = this.parentElement.dataset.fill;
 
@@ -69,6 +71,14 @@ window.addEventListener('load', () => {
 				it.setAttribute('fill', fill);
 			})
     }
+
+
+		it.ontouchend = function () {
+			console.log('ontouchend');
+		}
+		it.touchmove = function () {
+			console.log('touchmove');
+		}
 
   });
 
