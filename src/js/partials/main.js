@@ -47,9 +47,23 @@ window.addEventListener('load', () => {
 				if (tempMax < parseInt(g.dataset.chosen)) tempMax = parseInt(g.dataset.chosen);
 			}
 			maxVal = tempMax;
-    
     }
+
+
+    it.onmouseenter = function () {
+			const currentId = parseInt(this.dataset.id, 10);
+			const color = this.parentElement.dataset.fill;
+
+			Array.from(this.parentElement.children).forEach((it, index) => {
+				const fill = index > currentId - 1 ? 'rgba(255,255,255,0.001)' : color;
+				it.setAttribute('fill', fill);
+			})
+    }
+
   });
+
+
+
 
   moveDown[eventType] = e => {
     e.preventDefault();
@@ -208,7 +222,7 @@ window.addEventListener('load', () => {
       const fill = index > comleteId - 1 ? 'rgba(255,255,255,0.001)' : this.dataset.fill;
       it.setAttribute('fill', fill);
       
-      it.onmouseenter = null;
+      //it.onmouseenter = null;
     })
 
     //console.dir(this.parentElement.dataset.fill)
@@ -216,12 +230,11 @@ window.addEventListener('load', () => {
   
   function onGroupMouseenter() {
     const comleteId = parseInt(this.dataset.chosen, 10);
-
     Array.from(this.children).forEach((it, index) => {
       //const fill = index > comleteId - 1 ? 'none' : this.dataset.fill;
       //it.setAttribute('fill', fill);
 
-      it.onmouseenter = onPathMouseenter;
+      //it.onmouseenter = onPathMouseenter;
     })
 
     //console.dir(this.parentElement.dataset.fill)
@@ -232,7 +245,6 @@ window.addEventListener('load', () => {
       licenseKey: '930B3D8E-64114A48-BE58EB40-E2698A87',
       verticalCentered: false,
       scrollOverflow: overflowScroll,
-      scrollOverflowReset: true,
       afterLoad: function () {
         document.querySelector('.header').classList.remove('anim');
         document.querySelector('.footer').classList.remove('anim');
