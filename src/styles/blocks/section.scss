@@ -86,8 +86,8 @@
       left: 50%;
       margin-left: -143px;
 
-      transition: opacity 0.8s ease, transform 0.8s ease;
-      transition-delay: 1.1s;
+      transition: opacity 0.8s ease 1.1s, transform 0.8s ease 1.1s,
+        background-color 0.3s ease;
     }
 
     #{$self}__after-logo {
